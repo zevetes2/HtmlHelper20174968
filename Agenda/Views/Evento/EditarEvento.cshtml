@@ -1,0 +1,35 @@
+﻿@model Agenda.Models.EventoViewModel
+@{
+    ViewBag.Title = "Editar Evento";
+}
+
+<h2>Crear Contacto</h2>
+
+@using (Html.BeginForm("EditarEvento", "Evento", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d => d.id_evento)
+            <div>
+                @Html.LabelFor(d => d.nombre_evento)
+                @Html.TextBoxFor(d => d.nombre_evento, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.nombre_evento, null, new { @class = "alert" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.fecha)<br />
+                @Html.TextBoxFor(d => d.fecha, new { Value = Model.fecha.ToString("dd-MM-yyyy")})
+                @Html.ValidationMessageFor(d => d.fecha, null, new { @class = "alert" })
+                <br />
+            </div>
+            <div>
+            </div>
+                @Html.LabelFor(d => d.lugar)
+                @Html.TextBoxFor(d => d.lugar, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.lugar, null, new { @class = "alert" })
+            <div>
+                <input type="submit" value="Editar" class="btn btn-primary" />
+            </div>
+        </div>
+
+    </div>
+}

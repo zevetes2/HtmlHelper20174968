@@ -1,0 +1,39 @@
+﻿@model Agenda.Models.ContactoViewModel
+@{
+    ViewBag.Title = "Datos del Contacto";
+}
+
+<center><h2>@ViewBag.Title @Html.DisplayFor(m => m.nombre)</h2></center><br>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Telefono</th>
+                <th>Correo Electronico</th>
+                <th>Genero</th>
+                <th>Estado Civil</th>
+                <th>Educacion</th>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(m => m.cedula)</td>
+                <td>@Html.DisplayFor(m => m.nombre)</td>
+                <td>@Html.DisplayFor(m => m.apellido)</td>
+                <td>@Html.DisplayFor(m => m.edad)</td>
+                <td>@Html.DisplayFor(m => m.telefono)</td>
+                <td>@Html.DisplayFor(m => m.email)</td>
+                <td>@Html.DisplayFor(m => m.genero)</td>
+                <td>@Html.DisplayFor(m => m.estado)</td>
+                <td>
+                    @Html.DisplayNameFor(m => m.opcion1) @Html.DisplayFor(m => m.opcion1) @Html.DisplayNameFor(m => m.opcion2) @Html.DisplayFor(m => m.opcion2) @Html.DisplayNameFor(m => m.opcion3) @Html.DisplayFor(m => m.opcion3) @Html.DisplayNameFor(m => m.opcion4) @Html.DisplayFor(m => m.opcion4)
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+</div>

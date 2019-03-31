@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgendaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="contacto">
+    <Key>
+      <PropertyRef Name="id_contacto" />
+    </Key>
+    <Property Name="id_contacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombres" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="evento">
+    <Key>
+      <PropertyRef Name="id_evento" />
+    </Key>
+    <Property Name="id_evento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_evento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha" Type="date" Nullable="false" />
+    <Property Name="lugar" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="fe" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AgendaDBModelStoreContainer">
+    <EntitySet Name="contacto" EntityType="Self.contacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="evento" EntityType="Self.evento" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

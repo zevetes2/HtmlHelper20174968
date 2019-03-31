@@ -1,0 +1,36 @@
+﻿@model Agenda.Models.ContactoViewModel
+@{
+    ViewBag.Title = "Editar Contacto";
+}
+
+<h2>Crear Contacto</h2>
+
+@using (Html.BeginForm("EditarContacto", "Contacto", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d   => d.id_contacto)
+            <div>
+                @Html.LabelFor(d => d.nombres)
+                @Html.TextBoxFor(d => d.nombres, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.nombres, null, new { @class = "alert" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.telefono)
+                @Html.TextBoxFor(d => d.telefono, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.telefono, null, new { @class = "alert" })
+
+            </div>
+            <div>
+            </div>
+            @Html.LabelFor(d => d.direccion)
+            @Html.TextBoxFor(d => d.direccion, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.direccion, null, new { @class = "alert" })
+            <div>
+                <input type="submit" value="Editar" class="btn btn-primary" />
+            </div>
+        </div>
+
+    </div>
+}
+

@@ -1,0 +1,69 @@
+﻿@using Agenda.Models
+@model ContactoViewModel
+@{
+    ViewBag.Title = "Crear Contacto";
+}
+
+<h2>Crear Contacto</h2>
+
+@using (Html.BeginForm("Index", "Contacto", FormMethod.Post))
+{
+    <div class="container">
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.LabelFor(d => d.cedula)
+                @Html.TextBoxFor(d => d.cedula, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.cedula, null, new { @class = "alert" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.nombre)
+                @Html.TextBoxFor(d => d.nombre, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.nombre, null, new { @class = "alert" })
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.apellido)
+                @Html.TextBoxFor(d => d.apellido, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.apellido, null, new { @class = "alert" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.telefono)
+                @Html.TextBoxFor(d => d.telefono, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.telefono, null, new { @class = "alert" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.edad)
+                @Html.TextBoxFor(d => d.edad, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.edad, null, new { @class = "alert" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.email)
+                @Html.TextBoxFor(d => d.email, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.email, null, new { @class = "alert" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.genero)
+                @Html.DropDownListFor(d => d.genero, new SelectList(Enum.GetValues(typeof(Genero))), "Seleciona un genero", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.genero, null, new { @class = "alert" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(d => d.estado)<br />
+                Soltero/a @Html.RadioButtonFor(m => m.estado, "Solter@")<br />
+                Casado/a @Html.RadioButtonFor(m => m.estado, "Casad@")<br />
+                Viudo/a @Html.RadioButtonFor(m => m.estado, "Viud@")<br />
+                Union Libre @Html.RadioButtonFor(m => m.estado, "Union Libre")<br /><br />
+
+            </div>
+            <div class="form-group">
+                <b>Educacion</b>
+                Primaria: @Html.CheckBoxFor(d => d.opcion1)<br />
+                Secundaria: @Html.CheckBoxFor(d => d.opcion2)<br />
+                Tecnico: @Html.CheckBoxFor(d => d.opcion3)<br />
+                Superior: @Html.CheckBoxFor(d => d.opcion4)<br />
+            </div>
+            <div>
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
